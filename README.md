@@ -2,9 +2,9 @@
 
 An exercise in reverse engineering, a web application (html5, css3, & es6 js) that generates passwords for my all time favorite Nintendo NES video game Metroid.
 
-![preview](https://raw.githubusercontent.com/xero/metroidCodeBreaker/main/img/preview.png)
+![preview](https://raw.githubusercontent.com/xero/metroidCodeBreaker/main/ui/img/preview.png)
 
-## https://lab.x-e.ro/metroidCodeBreaker
+# https://xero.github.io/metroidCodeBreaker/
 
 Many years ago, a rom hacker by the name of SnowBro set out to gain an intuitive understanding of the inner workings of the software we lovingly refer to as metroid. Using only the rom file, he was able to convert it into [assembly code](http://www.metroiddatabase.com/wp-content/uploads/Metroid/m1source.txt) and learn exactly how the game engine worked.
 
