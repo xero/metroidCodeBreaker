@@ -1,0 +1,1753 @@
+<!doctype html>
+<html lang="en">
+  <!--
+ .___.
+/  @  \
+\ @ @ /
+ {'^'}
+-->
+  <head>
+    <title>metroid code breaker / lab.x-e.ro</title>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="https://lab.x-e.ro"/>
+    <meta name="description" content="metroid code breaker, generate passwords for the nes metroid / lab.x-e.ro"/>
+    <meta name="keywords" content="metroid, password, nes, nintendo, reverse engineering, keygen, code breaker, metroid password, password generator, passgen, js, hax, xero, xero.style, x-e.ro, 0w.nz"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:image" content="img/title.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"/>
+		<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#7fa816"/>
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <meta name="theme-color" content="#000"/>
+    <style>
+      @font-face {
+        font-family: "narpassword";
+        src: url(data:application/font-woff2;charset=utf-8;base64,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) format("woff2");
+        font-weight: normal;
+        font-style: normal;
+      }
+      *,
+      html {
+        font-family: "narpassword";
+        font-weight: normal;
+        letter-spacing: 0.05em;
+        font-smooth: never;
+        -moz-osx-font-smoothing: auto;
+        -webkit-font-smoothing: none;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+      }
+      ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 0;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0000a8;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #5c94fc;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #58da50;
+      }
+      body {
+        background: #000;
+        padding: 40px 15px 15px 15px;
+      }
+      #secret {
+        cursor: help;
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50px;
+        left: 50%-100px;
+        animation: dance 6s ease 0s infinite normal none;
+      }
+      @keyframes dance {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-20px, 20px);
+        }
+        40% {
+          transform: translate(-20px, -20px);
+        }
+        60% {
+          transform: translate(20px, 20px);
+        }
+        80% {
+          transform: translate(20px, -20px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+      main {
+        display: block;
+        z-index: 20;
+        max-width: 768px !important;
+        width: 768px !important;
+        background-color: #000;
+        margin: 0 auto;
+      }
+      section {
+        margin: 10px auto;
+        display: block;
+        width: 768px;
+        max-width: 768px !important;
+        padding: 0;
+        margin: 0;
+      }
+      #logo {
+        background: url(img/title.png) top left no-repeat;
+        height: 173px;
+      }
+      #menu {
+        background: url(img/menu.png) top left no-repeat;
+        height: 260px;
+      }
+      #code {
+        background: url(img/code.png) top left no-repeat;
+        height: 165px;
+        p {
+          padding: 50px 200px 0 200px;
+          margin: 0;
+          #troidcode1,
+          #troidcode2 {
+            padding-top: 15px;
+            width: 360px;
+            font-size: 2em;
+            color: #58da50;
+            background: #000;
+            border: 0;
+            word-spacing: -10px;
+          }
+          #troidmsg {
+            background: #000;
+            border: 0;
+            color: #ff0000;
+          }
+        }
+      }
+      aside {
+        display: block;
+        padding: 8px;
+        width: 234px;
+        height: 240px;
+        margin-left: 256px;
+        overflow-y: scroll;
+        h1 {
+          text-transform: uppercase;
+          color: #58da50;
+          font-size: 1em;
+          margin: 10px 0px;
+        }
+        p {
+          margin: 0;
+          padding: 0 0 0 10px;
+          label {
+            color: #46bdfa;
+            word-spacing: -6px;
+            word-wrap: break-word;
+          }
+        }
+        input,
+        select,
+        radio,
+        checkbox {
+          background: #222;
+          border: 0;
+          border-radius: 0;
+          color: #46bdfa;
+        }
+        select {
+          border: 2px solid #000;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: url(img/arrow.png) top left no-repeat;
+          padding-left: 20px;
+          margin-right: 8px;
+          font-size: 16px;
+        }
+        checkbox {
+          clear: both;
+        }
+        input[type="checkbox"] {
+          appearance: none;
+          -webkit-appearance: none;
+          display: inline-flex;
+        }
+        input[type="checkbox"]::before {
+          content: "";
+          width: 16px;
+          height: 16px;
+          background: url(img/box.png) top left no-repeat;
+        }
+        input[type="checkbox"]:checked::before {
+          background: url(img/checked.png) top left no-repeat;
+        }
+      }
+      main section {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      #note {
+        display: none;
+        width: 740px;
+        color: #c0c0c0;
+      }
+      @media (max-width: 480px) {
+				body {
+          margin: 0;
+					padding: 0;
+				}
+				main {
+          transform: scale(0.58);
+					margin: 0px -175px;
+				}
+      #secret {
+        top: 15px;
+        left: 65px;
+      }
+			#note {
+				padding: 5px 30px;
+			}
+    </style>
+    <script>
+      var x;
+      (x = () => {
+        /* metroid password generator / decoder
+         * reverse engineering by unknown - algorithm by SnowBro */
+        class decoder {
+          constructor(name) {
+            /* get element */
+            this.gel = function (id) {
+              return document.getElementById(name + id);
+            };
+            /* get index */
+            this.id = function (id) {
+              return this.gel(id).selectedIndex;
+            };
+            /* set index */
+            this.ids = function (id, v) {
+              this.gel(id).selectedIndex = v;
+            };
+            /* get checked */
+            this.ch = function (id) {
+              return this.gel(id).checked ? 1 : 0;
+            };
+            /* set checked */
+            this.chs = function (id, v) {
+              this.gel(id).checked = v > 0;
+            };
+            /* get text */
+            this.tx = function (id) {
+              return this.gel(id).value;
+            };
+            /* set text */
+            this.txs = function (id, v) {
+              this.gel(id).value = v;
+            };
+            /* main logic */
+            this.rotate = function (roll) {
+              let result = [
+                0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              ];
+              result[16] = this.bytes[16]; /* encryption */
+              result[17] = this.bytes[17]; /* checksum */
+              /* handle bit by bit */
+              for (let n = 0; n < 128; ++n) {
+                let m = (n + roll) & 127;
+                let bit = 1 & (this.bytes[m >> 3] >> (7 - (m & 7)));
+                result[n >> 3] |= bit << (7 - (n & 7));
+              }
+              this.bytes = result;
+            };
+            this.convert_bits = function (input, ib, ob) {
+              let cache = 0;
+              let cachelen = 0;
+              let result = [];
+              let nm = input.length;
+              let obm = (1 << ob) - 1;
+              for (let n = 0; n < nm; ++n) {
+                /* populate low bits */
+                cache = (cache << ib) + input[n];
+                for (cachelen += ib; cachelen >= ob; ) {
+                  cachelen -= ob;
+                  /* eat high bits */
+                  result.push((cache >> cachelen) & obm);
+                  /* keep low bits */
+                  cache &= (1 << cachelen) - 1;
+                }
+              }
+              return result;
+            };
+            /* render */
+            this.updatedots = function () {
+              let t = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?- ";
+              let s = "";
+              for (let n = 0; n < 24; ++n) s += t.charAt(this.chars[n]);
+              this.txs("code1", s.substr(0, 6) + " " + s.substr(6, 6));
+              this.txs("code2", s.substr(12, 6) + " " + s.substr(18, 6));
+            };
+            /* convert code to options */
+            this.decode = function () {
+              let error = 0;
+              let message = "";
+              let t = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz?- ";
+              let code1 = this.tx("code1") + "0000000000000";
+              let code2 = this.tx("code2") + "0000000000000";
+              for (let n = 0; n < 6; ++n) {
+                let c = t.indexOf(code1.charAt(n));
+                c = c == 64 ? 255 : c & 63;
+                this.chars[n + 0] = c;
+                c = t.indexOf(code1.charAt(n + 7));
+                c = c == 64 ? 255 : c & 63;
+                this.chars[n + 6] = c;
+                c = t.indexOf(code2.charAt(n));
+                c = c == 64 ? 255 : c & 63;
+                this.chars[n + 12] = c;
+                c = t.indexOf(code2.charAt(n + 7));
+                c = c == 64 ? 255 : c & 63;
+                this.chars[n + 18] = c;
+              }
+              /* convert 6-bit to 8-bit */
+              this.bytes = this.convert_bits(this.chars, 6, 8);
+              this.roll = this.bytes[16];
+              let sum = this.bytes[17];
+              this.rotate(this.roll);
+              let sum2 = 0;
+              for (let n = 0; n < 17; ++n) sum2 += this.bytes[n];
+              sum2 &= 255;
+              for (let n = 0; n < 128; ++n) {
+                let b = n >> 3;
+                if (!(b == 10 || (n >= 64 && n <= 67)))
+                  this.chs("b" + n, this.bytes[b] & (1 << (n & 7)));
+              }
+              this.ids("misl", this.bytes[10]);
+              this.ids("begin", this.bytes[8] & 15);
+              this.ids("crypto", this.bytes[16]);
+              this.ids("sum", this.bytes[17]);
+              if (sum != sum2) {
+                error = 1;
+                message += "ERROR! checksum " + sum + " should be " + sum2;
+                this.txs("msg", message);
+              }
+            };
+            /* generate code from form */
+            this.gener8 = function () {
+              /* clear the password */
+              for (let n = 0; n < 16; ++n) {
+                this.bytes[n] = 0;
+              }
+              /* add each input bit to it */
+              for (let n = 0; n < 128; ++n) {
+                let b = n >> 3;
+                /* ignore bits which are given as numbers (such as missile counts) */
+                if (!(b == 10 || (n >= 64 && n <= 67)))
+                  this.bytes[b] |= this.ch("b" + n) << (n & 7);
+              }
+              /* store the input numbers (this.id() fetches the selected index of a selectbox) */
+              this.bytes[8] |= this.id("begin");
+              this.bytes[10] = this.id("misl");
+              this.bytes[16] = this.roll & 255;
+              /* calculate checksum */
+              let sum = 0;
+              for (let n = 0; n < 17; ++n) sum += this.bytes[n];
+              this.bytes[17] = sum & 255;
+              this.rotate(-this.roll); /* this is correct */
+              /* convert 8-bit to 6-bit */
+              this.chars = this.convert_bits(this.bytes, 8, 6);
+              this.updatedots();
+              this.decode();
+            };
+            /* code change handler */
+            this.modified = function () {
+              this.txs("msg", "");
+              this.decode();
+              /* reencode the password. fixes the checksum */
+              this.gener8();
+            };
+            /* debug code  */
+            this.narpassword = function () {
+              document.getElementById("mcb").reset();
+              let opts = [
+                "troidb2",
+                "troidb3",
+                "troidb4",
+                "troidb6",
+                "troidb9",
+                "troidb10",
+                "troidb13",
+                "troidb15",
+                "troidb16",
+                "troidb19",
+                "troidb20",
+                "troidb22",
+                "troidb23",
+                "troidb24",
+                "troidb27",
+                "troidb29",
+                "troidb32",
+                "troidb33",
+                "troidb34",
+                "troidb38",
+                "troidb39",
+                "troidb45",
+                "troidb48",
+                "troidb53",
+                "troidb54",
+                "troidb56",
+                "troidb57",
+                "troidb60",
+                "troidb61",
+                "troidb63",
+                "troidb70",
+              ];
+              for (let o in opts) {
+                document.getElementById(opts[o]).checked = true;
+              }
+              document.getElementById("note").style = "display: block";
+            };
+            /* init logic */
+            this.gel("code1").onchange = function (ev) {
+              troid.modified();
+            };
+            this.gel("code2").onchange = function (ev) {
+              troid.modified();
+            };
+            document.querySelector("#mcb").onclick = function (ev) {
+              troid.gener8();
+            };
+            document.getElementById("metroid").onclick = function (ev) {
+              troid.narpassword();
+            };
+            /* 0..255 values */
+            this.bytes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+            /* 0..63 encoded values */
+            this.chars = [
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+              0, 0,
+            ];
+            /* 0..255 */
+            this.roll = 0;
+          }
+        }
+        troid = new decoder("troid");
+        setTimeout("troid.gener8()", 30);
+      }),
+        "loading" !== document.readyState
+          ? x()
+          : document.addEventListener("DOMContentLoaded", x);
+    </script>
+  </head>
+  <body>
+    <main>
+      <form id="mcb">
+        <section id="logo"></section>
+        <section id="menu">
+          <aside>
+            <h1>Start Location</h1>
+            <p>
+              <select id="troidbegin" onchange="javascript:troid.gener8()">
+                <option value="0" selected="selected">The Beginning</option>
+                <option value="1">Norfair</option>
+                <option value="2">Kraid's hideout</option>
+                <option value="3">Tourian</option>
+                <option value="4">Ridley's hideout</option>
+                <option value="5">5 (Reset)</option>
+                <option value="6">6 (Reset)</option>
+                <option value="7">7 (Reset)</option>
+                <option value="8">8 (Reset)</option>
+                <option value="9">9 (Reset)</option>
+                <option value="10">10 (Reset)</option>
+                <option value="11">11 (Reset)</option>
+                <option value="12">12 (Reset)</option>
+                <option value="13">13 (Reset)</option>
+                <option value="14">14 (Reset)</option>
+                <option value="15">15 (Reset)</option>
+              </select>
+            </p>
+            <p>
+              <input id="troidb68" type="checkbox" value="1"/><label
+                for="troidb68"
+                >Elevator Used</label
+              >
+            </p>
+            <h1>items</h1>
+            <p>
+              <select id="troidmisl">
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+                <option value="71">71</option>
+                <option value="72">72</option>
+                <option value="73">73</option>
+                <option value="74">74</option>
+                <option value="75">75</option>
+                <option value="76">76</option>
+                <option value="77">77</option>
+                <option value="78">78</option>
+                <option value="79">79</option>
+                <option value="80">80</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="83">83</option>
+                <option value="84">84</option>
+                <option value="85">85</option>
+                <option value="86">86</option>
+                <option value="87">87</option>
+                <option value="88">88</option>
+                <option value="89">89</option>
+                <option value="90">90</option>
+                <option value="91">91</option>
+                <option value="92">92</option>
+                <option value="93">93</option>
+                <option value="94">94</option>
+                <option value="95">95</option>
+                <option value="96">96</option>
+                <option value="97">97</option>
+                <option value="98">98</option>
+                <option value="99">99</option>
+                <option value="100">100</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="104">104</option>
+                <option value="105">105</option>
+                <option value="106">106</option>
+                <option value="107">107</option>
+                <option value="108">108</option>
+                <option value="109">109</option>
+                <option value="110">110</option>
+                <option value="111">111</option>
+                <option value="112">112</option>
+                <option value="113">113</option>
+                <option value="114">114</option>
+                <option value="115">115</option>
+                <option value="116">116</option>
+                <option value="117">117</option>
+                <option value="118">118</option>
+                <option value="119">119</option>
+                <option value="120">120</option>
+                <option value="121">121</option>
+                <option value="122">122</option>
+                <option value="123">123</option>
+                <option value="124">124</option>
+                <option value="125">125</option>
+                <option value="126">126</option>
+                <option value="127">127</option>
+                <option value="128">128</option>
+                <option value="129">129</option>
+                <option value="130">130</option>
+                <option value="131">131</option>
+                <option value="132">132</option>
+                <option value="133">133</option>
+                <option value="134">134</option>
+                <option value="135">135</option>
+                <option value="136">136</option>
+                <option value="137">137</option>
+                <option value="138">138</option>
+                <option value="139">139</option>
+                <option value="140">140</option>
+                <option value="141">141</option>
+                <option value="142">142</option>
+                <option value="143">143</option>
+                <option value="144">144</option>
+                <option value="145">145</option>
+                <option value="146">146</option>
+                <option value="147">147</option>
+                <option value="148">148</option>
+                <option value="149">149</option>
+                <option value="150">150</option>
+                <option value="151">151</option>
+                <option value="152">152</option>
+                <option value="153">153</option>
+                <option value="154">154</option>
+                <option value="155">155</option>
+                <option value="156">156</option>
+                <option value="157">157</option>
+                <option value="158">158</option>
+                <option value="159">159</option>
+                <option value="160">160</option>
+                <option value="161">161</option>
+                <option value="162">162</option>
+                <option value="163">163</option>
+                <option value="164">164</option>
+                <option value="165">165</option>
+                <option value="166">166</option>
+                <option value="167">167</option>
+                <option value="168">168</option>
+                <option value="169">169</option>
+                <option value="170">170</option>
+                <option value="171">171</option>
+                <option value="172">172</option>
+                <option value="173">173</option>
+                <option value="174">174</option>
+                <option value="175">175</option>
+                <option value="176">176</option>
+                <option value="177">177</option>
+                <option value="178">178</option>
+                <option value="179">179</option>
+                <option value="180">180</option>
+                <option value="181">181</option>
+                <option value="182">182</option>
+                <option value="183">183</option>
+                <option value="184">184</option>
+                <option value="185">185</option>
+                <option value="186">186</option>
+                <option value="187">187</option>
+                <option value="188">188</option>
+                <option value="189">189</option>
+                <option value="190">190</option>
+                <option value="191">191</option>
+                <option value="192">192</option>
+                <option value="193">193</option>
+                <option value="194">194</option>
+                <option value="195">195</option>
+                <option value="196">196</option>
+                <option value="197">197</option>
+                <option value="198">198</option>
+                <option value="199">199</option>
+                <option value="200">200</option>
+                <option value="201">201</option>
+                <option value="202">202</option>
+                <option value="203">203</option>
+                <option value="204">204</option>
+                <option value="205">205</option>
+                <option value="206">206</option>
+                <option value="207">207</option>
+                <option value="208">208</option>
+                <option value="209">209</option>
+                <option value="210">210</option>
+                <option value="211">211</option>
+                <option value="212">212</option>
+                <option value="213">213</option>
+                <option value="214">214</option>
+                <option value="215">215</option>
+                <option value="216">216</option>
+                <option value="217">217</option>
+                <option value="218">218</option>
+                <option value="219">219</option>
+                <option value="220">220</option>
+                <option value="221">221</option>
+                <option value="222">222</option>
+                <option value="223">223</option>
+                <option value="224">224</option>
+                <option value="225">225</option>
+                <option value="226">226</option>
+                <option value="227">227</option>
+                <option value="228">228</option>
+                <option value="229">229</option>
+                <option value="230">230</option>
+                <option value="231">231</option>
+                <option value="232">232</option>
+                <option value="233">233</option>
+                <option value="234">234</option>
+                <option value="235">235</option>
+                <option value="236">236</option>
+                <option value="237">237</option>
+                <option value="238">238</option>
+                <option value="239">239</option>
+                <option value="240">240</option>
+                <option value="241">241</option>
+                <option value="242">242</option>
+                <option value="243">243</option>
+                <option value="244">244</option>
+                <option value="245">245</option>
+                <option value="246">246</option>
+                <option value="247">247</option>
+                <option value="248">248</option>
+                <option value="249">249</option>
+                <option value="250">250</option>
+                <option value="251">251</option>
+                <option value="252">252</option>
+                <option value="253">253</option>
+                <option value="254">254</option>
+                <option value="255">255</option></select
+              ><label for="troidmisl">Missiles</label>
+            </p>
+            <p>
+              <input id="troidb71" type="checkbox" value="1"/>
+							<label for="troidb71" >Zero Suit</label>
+            </p>
+            <p>
+              <input id="troidb72" type="checkbox" value="1"/>
+							<label for="troidb72" >Bombs</label>
+            </p>
+            <p>
+              <input id="troidb73" type="checkbox" value="1"/>
+							<label for="troidb73" >High Jump</label>
+            </p>
+            <p>
+              <input id="troidb74" type="checkbox" value="1"/>
+							<label for="troidb74" >Long Beam</label>
+            </p>
+            <p>
+              <input id="troidb75" type="checkbox" value="1"/>
+							<label for="troidb75" >Screw Attack</label>
+            </p>
+            <p>
+              <input id="troidb76" type="checkbox" value="1"/>
+							<label for="troidb76" >Maru Mari</label>
+            </p>
+            <p>
+              <input id="troidb77" type="checkbox" value="1"/>
+							<label for="troidb77" >Varia</label>
+            </p>
+            <p>
+              <input id="troidb78" type="checkbox" value="1"/>
+							<label for="troidb78" >Wave Beam</label>
+            </p>
+            <p>
+              <input id="troidb79" type="checkbox" value="1"/>
+							<label for="troidb79" >Ice Beam</label>
+            </p>
+            <h1>BRINSTAR</h1>
+            <p>
+              <input id="troidb0" type="checkbox" value="1"/>
+							<label for="troidb0" >took Maru Mari</label>
+            </p>
+            <p>
+              <input id="troidb1" type="checkbox" value="1"/>
+							<label for="troidb1" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb2" type="checkbox" value="1"/>
+							<label for="troidb2" >door to Long Beam</label>
+            </p>
+            <p>
+              <input id="troidb3" type="checkbox" value="1"/>
+							<label for="troidb3" >door to statues</label>
+            </p>
+            <p>
+              <input id="troidb4" type="checkbox" value="1"/>
+							<label for="troidb4" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb5" type="checkbox" value="1"/>
+							<label for="troidb5" >door to bombs</label>
+            </p>
+            <p>
+              <input id="troidb6" type="checkbox" value="1"/>
+							<label for="troidb6" >took bombs</label>
+            </p>
+            <p>
+              <input id="troidb7" type="checkbox" value="1"/>
+							<label for="troidb7" >door to Ice Beam</label>
+            </p>
+            <p>
+              <input id="troidb8" type="checkbox" value="1"/>
+							<label for="troidb8" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb9" type="checkbox" value="1"/>
+							<label for="troidb9" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb10" type="checkbox" value="1"/>
+							<label for="troidb10" >door to Varia</label>
+            </p>
+            <p>
+              <input id="troidb11" type="checkbox" value="1"/>
+							<label for="troidb11" >took Varia</label>
+            </p>
+            <p>
+              <input id="troidb12" type="checkbox" value="1"/>
+							<label for="troidb12" >took energy tank</label>
+            </p>
+            <h1>NORFAIR</h1>
+            <p>
+              <input id="troidb13" type="checkbox" value="1"/>
+							<label for="troidb13" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb14" type="checkbox" value="1"/>
+							<label for="troidb14" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb15" type="checkbox" value="1"/>
+							<label for="troidb15" >door to Ice Beam</label>
+            </p>
+            <p>
+              <input id="troidb16" type="checkbox" value="1"/>
+							<label for="troidb16" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb17" type="checkbox" value="1"/>
+							<label for="troidb17" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb18" type="checkbox" value="1"/>
+							<label for="troidb18" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb19" type="checkbox" value="1"/>
+							<label for="troidb19" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb20" type="checkbox" value="1"/>
+							<label for="troidb20" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb21" type="checkbox" value="1"/>
+							<label for="troidb21" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb22" type="checkbox" value="1"/>
+							<label for="troidb22" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb23" type="checkbox" value="1"/>
+							<label for="troidb23" >door to High Jump</label>
+            </p>
+            <p>
+              <input id="troidb24" type="checkbox" value="1"/>
+							<label for="troidb24" >took High Jump</label>
+            </p>
+            <p>
+              <input id="troidb25" type="checkbox" value="1"/>
+							<label for="troidb25" >screw Attack Door</label>
+            </p>
+            <p>
+              <input id="troidb26" type="checkbox" value="1"/>
+							<label for="troidb26" >took Screw Attack</label>
+            </p>
+            <p>
+              <input id="troidb27" type="checkbox" value="1"/>
+							<label for="troidb27" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb28" type="checkbox" value="1"/>
+							<label for="troidb28" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb29" type="checkbox" value="1"/>
+							<label for="troidb29" >door to Wave Beam</label>
+            </p>
+            <p>
+              <input id="troidb30" type="checkbox" value="1"/>
+							<label for="troidb30" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb31" type="checkbox" value="1"/>
+							<label for="troidb31" >took missiles</label>
+            </p>
+            <h1>KRAID'S HIDEOUT</h1>
+            <p>
+              <input id="troidb32" type="checkbox" value="1"/>
+							<label for="troidb32" >top red door</label>
+            </p>
+            <p>
+              <input id="troidb33" type="checkbox" value="1"/>
+							<label for="troidb33" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb34" type="checkbox" value="1"/>
+							<label for="troidb34" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb35" type="checkbox" value="1"/>
+							<label for="troidb35" >mid red door</label>
+            </p>
+            <p>
+              <input id="troidb36" type="checkbox" value="1"/>
+							<label for="troidb36" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb37" type="checkbox" value="1"/>
+							<label for="troidb37" >bottom red door</label>
+            </p>
+            <p>
+              <input id="troidb38" type="checkbox" value="1"/>
+							<label for="troidb38" >MiniBoss red door</label>
+            </p>
+            <p>
+              <input id="troidb39" type="checkbox" value="1"/>
+							<label for="troidb39" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb40" type="checkbox" value="1"/>
+							<label for="troidb40" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb41" type="checkbox" value="1"/>
+							<label for="troidb41" >door to Kraid</label>
+            </p>
+            <p>
+              <input id="troidb42" type="checkbox" value="1"/>
+							<label for="troidb42" >took energy tank</label>
+            </p>
+            <h1>RIDLEY'S HIDEOUT</h1>
+            <p>
+              <input id="troidb43" type="checkbox" value="1"/>
+							<label for="troidb43" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb44" type="checkbox" value="1"/>
+							<label for="troidb44" >red door</label>
+            </p>
+            <p>
+              <input id="troidb45" type="checkbox" value="1"/>
+							<label for="troidb45" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb46" type="checkbox" value="1"/>
+							<label for="troidb46" >took missiles</label>
+            </p>
+            <p>
+              <input id="troidb47" type="checkbox" value="1"/>
+							<label for="troidb47" >door to Ridley</label>
+            </p>
+            <p>
+              <input id="troidb48" type="checkbox" value="1"/>
+							<label for="troidb48" >took energy tank</label>
+            </p>
+            <p>
+              <input id="troidb49" type="checkbox" value="1"/>
+							<label for="troidb49" >took missiles</label>
+            </p>
+            <h1>TOURAIN</h1>
+            <p>
+							<input id="troidb50" type="checkbox" value="1"/>
+							<label for="troidb50" >1st yellow door</label>
+            </p>
+            <p>
+              <input id="troidb51" type="checkbox" value="1"/>
+							<label for="troidb51" >2nd yellow door</label>
+            </p>
+            <p>
+              <input id="troidb52" type="checkbox" value="1"/>
+							<label for="troidb52" >3rd yellow door</label>
+            </p>
+            <p>
+              <input id="troidb53" type="checkbox" value="1"/>
+							<label for="troidb53" >Zeebetite 1</label>
+            </p>
+            <p>
+              <input id="troidb54" type="checkbox" value="1"/>
+							<label for="troidb54" >Zeebetite 2</label>
+            </p>
+            <p>
+              <input id="troidb55" type="checkbox" value="1"/>
+							<label for="troidb55" >Zeebetite 3</label>
+            </p>
+            <p>
+              <input id="troidb56" type="checkbox" value="1"/>
+							<label for="troidb56" >Zeebetite 4</label>
+            </p>
+            <p>
+              <input id="troidb57" type="checkbox" value="1"/>
+							<label for="troidb57" >Zeebetite 5</label>
+            </p>
+            <h1>Bosses</h1>
+            <p>
+							<input id="troidb126" type="checkbox" value="1"/>
+							<label for="troidb126" >Kraid Defeated</label>
+            </p>
+            <p>
+              <input id="troidb127" type="checkbox" value="1"/>
+							<label for="troidb127" >Kraid statue hit</label>
+            </p>
+            <p>
+              <input id="troidb124" type="checkbox" value="1"/>
+							<label for="troidb124" >Ridley Defeated</label>
+            </p>
+            <p>
+              <input id="troidb125" type="checkbox" value="1"/>
+							<label for="troidb125" >Ridley statue hit</label>
+            </p>
+            <p>
+              <input id="troidb58" type="checkbox" value="1"/>
+							<label for="troidb58" >Mother Brain Defeated</label>
+            </p>
+            <h1>UNKNOWN</h1>
+            <p>
+              <input id="troidb59" type="checkbox" value="1"/>
+							<label for="troidb59" >Bit 59</label>
+            </p>
+            <p>
+              <input id="troidb60" type="checkbox" value="1"/>
+							<label for="troidb60" >Bit 60</label>
+            </p>
+            <p>
+              <input id="troidb61" type="checkbox" value="1"/>
+							<label for="troidb61" >Bit 61</label>
+            </p>
+            <p>
+              <input id="troidb62" type="checkbox" value="1"/>
+							<label for="troidb62" >Bit 62</label>
+            </p>
+            <p>
+              <input id="troidb63" type="checkbox" value="1"/>
+							<label for="troidb63" >Bit 63</label>
+            </p>
+            <p>
+              <input id="troidb69" type="checkbox" value="1"/>
+							<label for="troidb69" >Bit 69</label>
+            </p>
+            <p>
+              <input id="troidb70" type="checkbox" value="1"/>
+							<label for="troidb70" >Bit 70</label>
+            </p>
+            <p>
+              <input id="troidb88" type="checkbox" value="1"/>
+							<label for="troidb88" >Bit 88</label>
+            </p>
+            <p>
+              <input id="troidb89" type="checkbox" value="1"/>
+							<label for="troidb89" >Bit 89</label>
+            </p>
+            <p>
+              <input id="troidb90" type="checkbox" value="1"/>
+							<label for="troidb90" >Bit 90</label>
+            </p>
+            <p>
+              <input id="troidb91" type="checkbox" value="1"/>
+							<label for="troidb91" >Bit 91</label>
+            </p>
+            <p>
+              <input id="troidb92" type="checkbox" value="1"/>
+							<label for="troidb92" >Bit 92</label>
+            </p>
+            <p>
+              <input id="troidb93" type="checkbox" value="1"/>
+							<label for="troidb93" >Bit 93</label>
+            </p>
+            <p>
+              <input id="troidb94" type="checkbox" value="1"/>
+							<label for="troidb94" >Bit 94</label>
+            </p>
+            <p>
+              <input id="troidb95" type="checkbox" value="1"/>
+							<label for="troidb95" >Bit 95</label>
+            </p>
+            <p>
+              <input id="troidb96" type="checkbox" value="1"/>
+							<label for="troidb96" >Bit 96</label>
+            </p>
+            <p>
+              <input id="troidb97" type="checkbox" value="1"/>
+							<label for="troidb97" >Bit 97</label>
+            </p>
+            <p>
+              <input id="troidb98" type="checkbox" value="1"/>
+							<label for="troidb98" >Bit 98</label>
+            </p>
+            <p>
+              <input id="troidb99" type="checkbox" value="1"/>
+							<label for="troidb99" >Bit 99</label>
+            </p>
+            <p>
+              <input id="troidb100" type="checkbox" value="1"/>
+							<label for="troidb100" >Bit 100</label>
+            </p>
+            <p>
+              <input id="troidb101" type="checkbox" value="1"/>
+							<label for="troidb101" >Bit 101</label>
+            </p>
+            <p>
+              <input id="troidb102" type="checkbox" value="1"/>
+							<label for="troidb102" >Bit 102</label>
+            </p>
+            <p>
+              <input id="troidb103" type="checkbox" value="1"/>
+							<label for="troidb103" >Bit 103</label>
+            </p>
+            <p>
+              <input id="troidb104" type="checkbox" value="1"/>
+							<label for="troidb104" >Bit 104</label>
+            </p>
+            <p>
+              <input id="troidb105" type="checkbox" value="1"/>
+							<label for="troidb105" >Bit 105</label>
+            </p>
+            <p>
+              <input id="troidb106" type="checkbox" value="1"/>
+							<label for="troidb106" >Bit 106</label>
+            </p>
+            <p>
+              <input id="troidb107" type="checkbox" value="1"/>
+							<label for="troidb107" >Bit 107</label>
+            </p>
+            <p>
+              <input id="troidb108" type="checkbox" value="1"/>
+							<label for="troidb108" >Bit 108</label>
+            </p>
+            <p>
+              <input id="troidb109" type="checkbox" value="1"/>
+							<label for="troidb109" >Bit 109</label>
+            </p>
+            <p>
+              <input id="troidb110" type="checkbox" value="1"/>
+							<label for="troidb110" >Bit 110</label>
+            </p>
+            <p>
+              <input id="troidb111" type="checkbox" value="1"/>
+							<label for="troidb111" >Bit 111</label>
+            </p>
+            <p>
+              <input id="troidb112" type="checkbox" value="1"/>
+							<label for="troidb112" >Bit 112</label>
+            </p>
+            <p>
+              <input id="troidb113" type="checkbox" value="1"/>
+							<label for="troidb113" >Bit 113</label>
+            </p>
+            <p>
+              <input id="troidb114" type="checkbox" value="1"/>
+							<label for="troidb114" >Bit 114</label>
+            </p>
+            <p>
+              <input id="troidb115" type="checkbox" value="1"/>
+							<label for="troidb115" >Bit 115</label>
+            </p>
+            <p>
+              <input id="troidb116" type="checkbox" value="1"/>
+							<label for="troidb116" >Bit 116</label>
+            </p>
+            <p>
+              <input id="troidb117" type="checkbox" value="1"/>
+							<label for="troidb117" >Bit 117</label>
+            </p>
+            <p>
+              <input id="troidb118" type="checkbox" value="1"/>
+							<label for="troidb118" >Bit 118</label>
+            </p>
+            <p>
+              <input id="troidb119" type="checkbox" value="1"/>
+							<label for="troidb119" >Bit 119</label>
+            </p>
+            <p>
+              <input id="troidb120" type="checkbox" value="1"/>
+							<label for="troidb120" >Bit 120</label>
+            </p>
+            <p>
+              <input id="troidb121" type="checkbox" value="1"/>
+							<label for="troidb121" >Bit 121</label>
+            </p>
+            <p>
+              <input id="troidb122" type="checkbox" value="1"/>
+							<label for="troidb122" >Bit 122</label>
+            </p>
+            <p>
+              <input id="troidb123" type="checkbox" value="1"/>
+							<label for="troidb123" >Bit 123</label>
+            </p>
+            <h1>ENCRYPTION</h1>
+            <p>
+              <select id="troidcrypto">
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+                <option value="71">71</option>
+                <option value="72">72</option>
+                <option value="73">73</option>
+                <option value="74">74</option>
+                <option value="75">75</option>
+                <option value="76">76</option>
+                <option value="77">77</option>
+                <option value="78">78</option>
+                <option value="79">79</option>
+                <option value="80">80</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="83">83</option>
+                <option value="84">84</option>
+                <option value="85">85</option>
+                <option value="86">86</option>
+                <option value="87">87</option>
+                <option value="88">88</option>
+                <option value="89">89</option>
+                <option value="90">90</option>
+                <option value="91">91</option>
+                <option value="92">92</option>
+                <option value="93">93</option>
+                <option value="94">94</option>
+                <option value="95">95</option>
+                <option value="96">96</option>
+                <option value="97">97</option>
+                <option value="98">98</option>
+                <option value="99">99</option>
+                <option value="100">100</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="104">104</option>
+                <option value="105">105</option>
+                <option value="106">106</option>
+                <option value="107">107</option>
+                <option value="108">108</option>
+                <option value="109">109</option>
+                <option value="110">110</option>
+                <option value="111">111</option>
+                <option value="112">112</option>
+                <option value="113">113</option>
+                <option value="114">114</option>
+                <option value="115">115</option>
+                <option value="116">116</option>
+                <option value="117">117</option>
+                <option value="118">118</option>
+                <option value="119">119</option>
+                <option value="120">120</option>
+                <option value="121">121</option>
+                <option value="122">122</option>
+                <option value="123">123</option>
+                <option value="124">124</option>
+                <option value="125">125</option>
+                <option value="126">126</option>
+                <option value="127">127</option>
+                <option value="128">128</option>
+                <option value="129">129</option>
+                <option value="130">130</option>
+                <option value="131">131</option>
+                <option value="132">132</option>
+                <option value="133">133</option>
+                <option value="134">134</option>
+                <option value="135">135</option>
+                <option value="136">136</option>
+                <option value="137">137</option>
+                <option value="138">138</option>
+                <option value="139">139</option>
+                <option value="140">140</option>
+                <option value="141">141</option>
+                <option value="142">142</option>
+                <option value="143">143</option>
+                <option value="144">144</option>
+                <option value="145">145</option>
+                <option value="146">146</option>
+                <option value="147">147</option>
+                <option value="148">148</option>
+                <option value="149">149</option>
+                <option value="150">150</option>
+                <option value="151">151</option>
+                <option value="152">152</option>
+                <option value="153">153</option>
+                <option value="154">154</option>
+                <option value="155">155</option>
+                <option value="156">156</option>
+                <option value="157">157</option>
+                <option value="158">158</option>
+                <option value="159">159</option>
+                <option value="160">160</option>
+                <option value="161">161</option>
+                <option value="162">162</option>
+                <option value="163">163</option>
+                <option value="164">164</option>
+                <option value="165">165</option>
+                <option value="166">166</option>
+                <option value="167">167</option>
+                <option value="168">168</option>
+                <option value="169">169</option>
+                <option value="170">170</option>
+                <option value="171">171</option>
+                <option value="172">172</option>
+                <option value="173">173</option>
+                <option value="174">174</option>
+                <option value="175">175</option>
+                <option value="176">176</option>
+                <option value="177">177</option>
+                <option value="178">178</option>
+                <option value="179">179</option>
+                <option value="180">180</option>
+                <option value="181">181</option>
+                <option value="182">182</option>
+                <option value="183">183</option>
+                <option value="184">184</option>
+                <option value="185">185</option>
+                <option value="186">186</option>
+                <option value="187">187</option>
+                <option value="188">188</option>
+                <option value="189">189</option>
+                <option value="190">190</option>
+                <option value="191">191</option>
+                <option value="192">192</option>
+                <option value="193">193</option>
+                <option value="194">194</option>
+                <option value="195">195</option>
+                <option value="196">196</option>
+                <option value="197">197</option>
+                <option value="198">198</option>
+                <option value="199">199</option>
+                <option value="200">200</option>
+                <option value="201">201</option>
+                <option value="202">202</option>
+                <option value="203">203</option>
+                <option value="204">204</option>
+                <option value="205">205</option>
+                <option value="206">206</option>
+                <option value="207">207</option>
+                <option value="208">208</option>
+                <option value="209">209</option>
+                <option value="210">210</option>
+                <option value="211">211</option>
+                <option value="212">212</option>
+                <option value="213">213</option>
+                <option value="214">214</option>
+                <option value="215">215</option>
+                <option value="216">216</option>
+                <option value="217">217</option>
+                <option value="218">218</option>
+                <option value="219">219</option>
+                <option value="220">220</option>
+                <option value="221">221</option>
+                <option value="222">222</option>
+                <option value="223">223</option>
+                <option value="224">224</option>
+                <option value="225">225</option>
+                <option value="226">226</option>
+                <option value="227">227</option>
+                <option value="228">228</option>
+                <option value="229">229</option>
+                <option value="230">230</option>
+                <option value="231">231</option>
+                <option value="232">232</option>
+                <option value="233">233</option>
+                <option value="234">234</option>
+                <option value="235">235</option>
+                <option value="236">236</option>
+                <option value="237">237</option>
+                <option value="238">238</option>
+                <option value="239">239</option>
+                <option value="240">240</option>
+                <option value="241">241</option>
+                <option value="242">242</option>
+                <option value="243">243</option>
+                <option value="244">244</option>
+                <option value="245">245</option>
+                <option value="246">246</option>
+                <option value="247">247</option>
+                <option value="248">248</option>
+                <option value="249">249</option>
+                <option value="250">250</option>
+                <option value="251">251</option>
+                <option value="252">252</option>
+                <option value="253">253</option>
+                <option value="254">254</option>
+                <option value="255">255</option></select
+              ><label for="troidcrypto">Salt</label>
+            </p>
+            <p>
+              <select id="troidsum">
+                <option value="0" selected="selected">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="34">34</option>
+                <option value="35">35</option>
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+                <option value="43">43</option>
+                <option value="44">44</option>
+                <option value="45">45</option>
+                <option value="46">46</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+                <option value="56">56</option>
+                <option value="57">57</option>
+                <option value="58">58</option>
+                <option value="59">59</option>
+                <option value="60">60</option>
+                <option value="61">61</option>
+                <option value="62">62</option>
+                <option value="63">63</option>
+                <option value="64">64</option>
+                <option value="65">65</option>
+                <option value="66">66</option>
+                <option value="67">67</option>
+                <option value="68">68</option>
+                <option value="69">69</option>
+                <option value="70">70</option>
+                <option value="71">71</option>
+                <option value="72">72</option>
+                <option value="73">73</option>
+                <option value="74">74</option>
+                <option value="75">75</option>
+                <option value="76">76</option>
+                <option value="77">77</option>
+                <option value="78">78</option>
+                <option value="79">79</option>
+                <option value="80">80</option>
+                <option value="81">81</option>
+                <option value="82">82</option>
+                <option value="83">83</option>
+                <option value="84">84</option>
+                <option value="85">85</option>
+                <option value="86">86</option>
+                <option value="87">87</option>
+                <option value="88">88</option>
+                <option value="89">89</option>
+                <option value="90">90</option>
+                <option value="91">91</option>
+                <option value="92">92</option>
+                <option value="93">93</option>
+                <option value="94">94</option>
+                <option value="95">95</option>
+                <option value="96">96</option>
+                <option value="97">97</option>
+                <option value="98">98</option>
+                <option value="99">99</option>
+                <option value="100">100</option>
+                <option value="101">101</option>
+                <option value="102">102</option>
+                <option value="103">103</option>
+                <option value="104">104</option>
+                <option value="105">105</option>
+                <option value="106">106</option>
+                <option value="107">107</option>
+                <option value="108">108</option>
+                <option value="109">109</option>
+                <option value="110">110</option>
+                <option value="111">111</option>
+                <option value="112">112</option>
+                <option value="113">113</option>
+                <option value="114">114</option>
+                <option value="115">115</option>
+                <option value="116">116</option>
+                <option value="117">117</option>
+                <option value="118">118</option>
+                <option value="119">119</option>
+                <option value="120">120</option>
+                <option value="121">121</option>
+                <option value="122">122</option>
+                <option value="123">123</option>
+                <option value="124">124</option>
+                <option value="125">125</option>
+                <option value="126">126</option>
+                <option value="127">127</option>
+                <option value="128">128</option>
+                <option value="129">129</option>
+                <option value="130">130</option>
+                <option value="131">131</option>
+                <option value="132">132</option>
+                <option value="133">133</option>
+                <option value="134">134</option>
+                <option value="135">135</option>
+                <option value="136">136</option>
+                <option value="137">137</option>
+                <option value="138">138</option>
+                <option value="139">139</option>
+                <option value="140">140</option>
+                <option value="141">141</option>
+                <option value="142">142</option>
+                <option value="143">143</option>
+                <option value="144">144</option>
+                <option value="145">145</option>
+                <option value="146">146</option>
+                <option value="147">147</option>
+                <option value="148">148</option>
+                <option value="149">149</option>
+                <option value="150">150</option>
+                <option value="151">151</option>
+                <option value="152">152</option>
+                <option value="153">153</option>
+                <option value="154">154</option>
+                <option value="155">155</option>
+                <option value="156">156</option>
+                <option value="157">157</option>
+                <option value="158">158</option>
+                <option value="159">159</option>
+                <option value="160">160</option>
+                <option value="161">161</option>
+                <option value="162">162</option>
+                <option value="163">163</option>
+                <option value="164">164</option>
+                <option value="165">165</option>
+                <option value="166">166</option>
+                <option value="167">167</option>
+                <option value="168">168</option>
+                <option value="169">169</option>
+                <option value="170">170</option>
+                <option value="171">171</option>
+                <option value="172">172</option>
+                <option value="173">173</option>
+                <option value="174">174</option>
+                <option value="175">175</option>
+                <option value="176">176</option>
+                <option value="177">177</option>
+                <option value="178">178</option>
+                <option value="179">179</option>
+                <option value="180">180</option>
+                <option value="181">181</option>
+                <option value="182">182</option>
+                <option value="183">183</option>
+                <option value="184">184</option>
+                <option value="185">185</option>
+                <option value="186">186</option>
+                <option value="187">187</option>
+                <option value="188">188</option>
+                <option value="189">189</option>
+                <option value="190">190</option>
+                <option value="191">191</option>
+                <option value="192">192</option>
+                <option value="193">193</option>
+                <option value="194">194</option>
+                <option value="195">195</option>
+                <option value="196">196</option>
+                <option value="197">197</option>
+                <option value="198">198</option>
+                <option value="199">199</option>
+                <option value="200">200</option>
+                <option value="201">201</option>
+                <option value="202">202</option>
+                <option value="203">203</option>
+                <option value="204">204</option>
+                <option value="205">205</option>
+                <option value="206">206</option>
+                <option value="207">207</option>
+                <option value="208">208</option>
+                <option value="209">209</option>
+                <option value="210">210</option>
+                <option value="211">211</option>
+                <option value="212">212</option>
+                <option value="213">213</option>
+                <option value="214">214</option>
+                <option value="215">215</option>
+                <option value="216">216</option>
+                <option value="217">217</option>
+                <option value="218">218</option>
+                <option value="219">219</option>
+                <option value="220">220</option>
+                <option value="221">221</option>
+                <option value="222">222</option>
+                <option value="223">223</option>
+                <option value="224">224</option>
+                <option value="225">225</option>
+                <option value="226">226</option>
+                <option value="227">227</option>
+                <option value="228">228</option>
+                <option value="229">229</option>
+                <option value="230">230</option>
+                <option value="231">231</option>
+                <option value="232">232</option>
+                <option value="233">233</option>
+                <option value="234">234</option>
+                <option value="235">235</option>
+                <option value="236">236</option>
+                <option value="237">237</option>
+                <option value="238">238</option>
+                <option value="239">239</option>
+                <option value="240">240</option>
+                <option value="241">241</option>
+                <option value="242">242</option>
+                <option value="243">243</option>
+                <option value="244">244</option>
+                <option value="245">245</option>
+                <option value="246">246</option>
+                <option value="247">247</option>
+                <option value="248">248</option>
+                <option value="249">249</option>
+                <option value="250">250</option>
+                <option value="251">251</option>
+                <option value="252">252</option>
+                <option value="253">253</option>
+                <option value="254">254</option>
+                <option value="255">255</option></select
+              ><label for="troidsum">Checksum</label>
+            </p>
+          </aside>
+        </section>
+        <section id="code">
+          <p>
+            <input size="13" maxlength="13" id="troidcode1" type="text" value="000000 000000"/>
+            <input size="13" maxlength="13" id="troidcode2" type="text" value="000000 000000"/>
+            <input size="80" id="troidmsg" readonly="" type="text"/>
+          </p>
+        </section>
+        <div id="secret"><img src="img/metroid.gif" id="metroid"/></div>
+        <section id="note">
+          <p>
+            interestingly, a debug-mode password is hardcoded into the game.
+            <tt>NARPAS SWORD</tt> (leave the rest blank or pad zeros) will give
+            infinite health and missles, as well as the Ice and Wave beams
+            combined into one shot. notice what game options this decodes to.
+          </p>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
