@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "narpassword";
+  src: url(narpassword00000.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "narpasswordfixed";
+  src: url(narpassword00000fixed.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+html {
+  font-family: "narpassword";
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  font-smooth: never;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: none;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 0;
+}
+::-webkit-scrollbar-track {
+  background: #0000a8;
+}
+::-webkit-scrollbar-thumb {
+  background: #5c94fc;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #58da50;
+}
+body {
+  background: #000;
+  padding: 40px 15px 15px 15px;
+}
+#secret {
+  cursor: help;
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50%-100px;
+  animation: dance 6s ease 0s infinite normal none;
+}
+@keyframes dance {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-20px, 20px);
+  }
+  40% {
+    transform: translate(-20px, -20px);
+  }
+  60% {
+    transform: translate(20px, 20px);
+  }
+  80% {
+    transform: translate(20px, -20px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+main {
+  display: block;
+  z-index: 20;
+  max-width: 768px !important;
+  width: 768px !important;
+  background-color: #000;
+  margin: 0 auto;
+}
+section {
+  margin: 10px auto;
+  display: block;
+  width: 768px;
+  max-width: 768px !important;
+  padding: 0;
+  margin: 0;
+}
+#logo {
+  background: url(img/title.png) top left no-repeat;
+  height: 173px;
+}
+#menu {
+  background: url(img/menu.png) top left no-repeat;
+  height: 260px;
+}
+#code {
+  background: url(img/code.png) top left no-repeat;
+  height: 165px;
+  p {
+    padding: 50px 200px 0 200px;
+    margin: 0;
+    #troidcode1,
+    #troidcode2 {
+			font-family: narpasswordfixed;
+      padding-top: 15px;
+      width: 360px;
+      font-size: 2em;
+      color: #58da50;
+      background: #000;
+      border: 0;
+      word-spacing: -10px;
+    }
+    #troidmsg {
+      background: #000;
+      border: 0;
+      color: #ff0000;
+    }
+  }
+}
+aside {
+  display: block;
+  padding: 8px;
+  width: 234px;
+  height: 240px;
+  margin-left: 256px;
+  overflow-y: scroll;
+  h1 {
+    text-transform: uppercase;
+    color: #58da50;
+    font-size: 1em;
+    margin: 10px 0px;
+  }
+  p {
+    margin: 0;
+    padding: 0 0 0 10px;
+    label {
+      color: #46bdfa;
+      word-spacing: -6px;
+      word-wrap: break-word;
+    }
+  }
+  input,
+  select,
+  radio,
+  checkbox {
+    background: #222;
+    border: 0;
+    border-radius: 0;
+    color: #46bdfa;
+  }
+  select {
+    border: 2px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(img/arrow.png) top left no-repeat;
+    padding-left: 20px;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  checkbox {
+    clear: both;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: inline-flex;
+  }
+  input[type="checkbox"]::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url(img/box.png) top left no-repeat;
+  }
+  input[type="checkbox"]:checked::before {
+    background: url(img/checked.png) top left no-repeat;
+  }
+}
+main section {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#note {
+  display: none;
+  width: 740px;
+  color: #c0c0c0;
+}
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  main {
+    transform: scale(0.58);
+    margin: 0px -175px;
+  }
+  #secret {
+    top: 15px;
+    left: 65px;
+  }
+  #note {
+    padding: 5px 30px;
+  }
+}

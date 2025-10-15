@@ -1,11 +1,20 @@
-# metroid code breaker
+# Metroid Code Breaker
 
-an exercise in reverse engineering, web application that generates passwords for the classic Nintendo NES video game Metroid
+An exercise in reverse engineering, a web application (html5, css3, & es6 js) that generates passwords for my all time favorite Nintendo NES video game Metroid.
 
 ![preview](https://raw.githubusercontent.com/xero/metroidCodeBreaker/main/img/preview.png)
 
-many years ago, a rom hacker by the name of SnowBro set out to gain an intuitive understanding of the inner workings of the software we lovingly refer to as metroid. using only the rom file, he was able to convert it into [assembly code](http://www.metroiddatabase.com/wp-content/uploads/Metroid/m1source.txt) and learn exactly how the game engine worked.
+## https://lab.x-e.ro/metroidCodeBreaker
 
-building off the work SnowBro did many years ago, dirty McDingus disassembled the entire metroid code into [nine different text files](http://www.metroiddatabase.com/wp-content/uploads/Metroid/MetroidSourceCode.zip) documenting the majority of it far more extensively than SnowBro had. there are descriptions for the title page, intro, ending, password, and music. the program can now be edited and reassembled using tools like ophis, making far more sophisticated rom hacks possible.
+Many years ago, a rom hacker by the name of SnowBro set out to gain an intuitive understanding of the inner workings of the software we lovingly refer to as metroid. Using only the rom file, he was able to convert it into [assembly code](http://www.metroiddatabase.com/wp-content/uploads/Metroid/m1source.txt) and learn exactly how the game engine worked.
 
-armed with these files and the knowledge they contained, i set out to build a metroid password generator tool. being a scene kid, i have some experience with keygens already. and with the work of snobro's password explanations and dirty's raw code, i was able to get the job done. all graphics are game sprites i ripped and assembled. it also features my metroid password font [NARPASSWORD](https://fonts.xero.style/fonts/NARPASSWORD00000). who's name is inspired by the debug password which was first discovered by snobro's research.
+Building off the work SnowBro did many years ago, Dirty McDingus disassembled the entire metroid code into [nine different text files](http://www.metroiddatabase.com/wp-content/uploads/Metroid/MetroidSourceCode.zip) documenting the majority of it far more extensively than SnowBro had. There are descriptions for the title page, intro, ending, password, and music. The program can now be edited and reassembled using tools like ophis, making far more sophisticated rom hacks possible.
+
+Armed with these files and the knowledge they contained, I set out to build a Metroid password generator tool. Being a scene kid, I have experience with keygens already. And with the work of SnoBro's password explanations and Dirty's raw code, I was able to get the job done. All graphics are game sprites I ripped and assembled. It also features my Metroid password font [NARPASSWORD](https://fonts.xero.style/fonts/NARPASSWORD00000). Who's name is inspired by the debug password which was first discovered by SnoBro's research.
+
+```
+ .___.   metroid code breaker
+/  @  \  MMXXV xero harrison
+\ @ @ /  https://lab.x-e.ro
+ {'^'}   licensed CC0/public domain
+```
